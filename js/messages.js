@@ -580,7 +580,7 @@ var messages = {
     'mn': 'Colorblind Mode',
     'sk': 'Režim pre farboslepých',
     'bn': 'কালারব্লাইন্ড মোড',
-    'np': 'रङ्ग अन्धता मोड',
+    'np': 'रङ्ग অन्धता মোড',
   },
   labelColorblindOff: {
     'en': 'Off',
@@ -608,7 +608,7 @@ var messages = {
     'mn': 'Унтраах',
     'sk': 'Vypnutie',
     'bn': 'বন্ধ',
-    'np': 'बन्द',
+    'np': 'বন্দ',
   },
   labelColorblindOn: {
     'en': 'On',
@@ -636,7 +636,7 @@ var messages = {
     'mn': 'Асаах',
     'sk': 'Zapnutie',
     'bn': 'চালু',
-    'np': 'चालु',
+    'np': 'চালু',
   },
   labelDifficultyEasy: {
     'en': 'Beginner',
@@ -730,5 +730,10 @@ var messages = {
     'sk': 'Expert - žiadne pokyny a náhodné úrovne',
     'bn': 'অভিজ্ঞ - কোন দিক নির্দেশনা নেই এবং স্তর গুলো হবে এলোমেলো',
     'np': 'विशेषज्ञ - कुनै निर्देशन छैन र यादृच्छिक स्तरहरू',
+  },
+  timeUp: {
+    'en': 'Time\'s up! Try again.',
+    'es': '¡Se acabó el tiempo! Inténtalo de nuevo.',
+    
   }
 };

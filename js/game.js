@@ -7,6 +7,9 @@ var game = {
   solved: (localStorage.solved && JSON.parse(localStorage.solved)) || [],
   changed: false,
   clickedCode: null,
+  timeLimit: 120, // 2 minutes in seconds
+  timer: null,
+  remainingTime: 120,
 
   start: function() {
     // navigator.language can include '-'
@@ -27,6 +30,7 @@ var game = {
     this.setHandlers();
     this.loadMenu();
     game.loadLevel(levels[game.level]);
+    this.startTimer();
   },
 
   setHandlers: function() {
@@ -207,6 +211,7 @@ var game = {
 
     var levelData = levels[this.level];
     this.loadLevel(levelData);
+    this.startTimer();
   },
 
   loadMenu: function() {
@@ -536,6 +541,44 @@ var game = {
 
     $('#code').val(content);
     $('#code').focus();
+  },
+
+  startTimer: function() {
+    this.remainingTime = this.timeLimit;
+    this.updateTimerDisplay();
+    
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      this.remainingTime--;
+      this.updateTimerDisplay();
+      
+      if (this.remainingTime <= 0) {
+        this.handleTimeUp();
+      }
+    }, 1000);
+  },
+
+  updateTimerDisplay: function() {
+    const minutes = Math.floor(this.remainingTime / 60);
+    const seconds = this.remainingTime % 60;
+    const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    
+    // Assuming you'll add a timer element to your HTML
+    $('#timer').text(display);
+  },
+
+  handleTimeUp: function() {
+    clearInterval(this.timer);
+    // Reset the level or show game over message
+    alert(messages.timeUp[game.language] || messages.timeUp.en);
+    this.reset(); // Or whatever reset behavior you want
+  },
+
+  reset: function() {
+    // ... existing reset code ...
+    
+    clearInterval(this.timer);
+    this.startTimer();
   }
 };
 

@@ -36,7 +36,25 @@ body {
   color: rgba(255, 255, 255, 0.8);
   font-family: 'PT Sans', sans-serif;
 }
+#timer-wrapper {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 4px;
+  font-size: 1.1em;
+  z-index: 9999;
+}
 
+#timer {
+  font-weight: bold;
+  margin-left: 5px;
+  z-index: 9999;
+}
+
+/* Add this if you want the timer to turn red when time is running low */
+#timer.warning {
+  color: #ff4040;
+  z-index: 9999;
+}
 #sidebar {
   width: 50%;
   min-width: 300px;
