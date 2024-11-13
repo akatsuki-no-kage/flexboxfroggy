@@ -733,7 +733,7 @@ var messages = {
   },
   timeUp: {
     'en': 'Time\'s up! Try again.',
-    'es': '¡Se acabó el tiempo! Inténtalo de nuevo.',
+    'vi': 'Thời gian đã hết! Hãy thử lại.',
     
   }
 };
