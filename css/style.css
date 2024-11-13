@@ -39,22 +39,35 @@ body {
 #timer-wrapper {
   display: inline-block;
   margin-left: 20px;
-  margin-top: 4px;
-  font-size: 1.1em;
+  transform: translateY(-2px);
+  font-size: 1.3em;
+  background-color: #2E7D32;
+  padding: 1px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   z-index: 9999;
 }
 
-#timer {
+#timer, #labelTime {
   font-weight: bold;
   margin-left: 5px;
+  font-size: 1.2em;
+  color: white;
   z-index: 9999;
 }
 
 /* Add this if you want the timer to turn red when time is running low */
-#timer.warning {
-  color: #ff4040;
-  z-index: 9999;
+#timer-wrapper.warning {
+  background-color: #d32f2f;
+  animation: pulse 1s infinite;
 }
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
 #sidebar {
   width: 50%;
   min-width: 300px;
