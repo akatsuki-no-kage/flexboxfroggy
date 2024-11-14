@@ -8,9 +8,9 @@ var game = {
   solved: (localStorage.solved && JSON.parse(localStorage.solved)) || [],
   changed: false,
   clickedCode: null,
-  timeLimit: 120, // 2 minutes in seconds
+  timeLimit: 300, // 2 minutes in seconds
   timer: null,
-  remainingTime: 120,
+  remainingTime: 300,
 
   start: function () {
     // navigator.language can include '-'
@@ -226,7 +226,7 @@ var game = {
 
     var levelData = levels[this.level];
     this.loadLevel(levelData);
-    this.startTimer();
+    // this.startTimer();
   },
 
   loadMenu: function () {
